@@ -1,7 +1,10 @@
 name: CI
 
 env:
+  DATABASE_URL: postgres://nexpress:nexpress@localhost:5433/nexpress_hosted_demo_ci
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  NP_SECRET: ci-only-secret-ci-only-secret-ci-only-secret
+  SITE_URL: http://localhost:3000
 
 on:
   push:
