@@ -8,7 +8,7 @@ import { ensureFor } from "@/lib/init-core";
 function bearerToken(request: NextRequest): string | null {
   const header = request.headers.get("authorization");
   const match = header?.match(/^Bearer\s+(.+)$/i);
-  return match?.[1] ?? request.nextUrl.searchParams.get("token");
+  return match?.[1] ?? null;
 }
 
 async function handleDemoReset(request: NextRequest): Promise<Response> {

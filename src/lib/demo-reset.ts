@@ -1,5 +1,6 @@
 import {
   NP_DEFAULT_SITE_ID,
+  NpConflictError,
   deleteDocument,
   findDocuments,
   getDb,
@@ -11,7 +12,7 @@ import {
   withDeferredPostCommit,
   type NpTransaction,
 } from "@nexpress/core";
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 
 import { seedAll } from "@/lib/seed-content";
 
@@ -41,31 +42,23 @@ const RESET_COLLECTIONS: DemoCollection[] = ["pages", "posts", "tags", "categori
 
 async function wipeCollection(
   collection: DemoCollection,
-  actorId: string,
+  actor: Awaited<ReturnType<typeof ensureDemoAccounts>>["visitor"],
   tx: NpTransaction,
 ): Promise<number> {
   const result = await findDocuments<{ id: string }>(collection, { limit: 10_000 });
   let deleted = 0;
   for (const doc of result.docs) {
     if (typeof doc.id !== "string") continue;
-    await deleteDocument(
-      collection,
-      doc.id,
-      {
-        id: actorId,
-        email: "demo@nexpress.local",
-        name: "Demo Visitor",
-        role: "admin",
-        tokenVersion: 0,
-      },
-      { tx },
-    );
+    await deleteDocument(collection, doc.id, actor, { tx });
     deleted += 1;
   }
   return deleted;
 }
 
-async function wipeDemoContent(actorId: string, tx: NpTransaction): Promise<DemoResetResult["wiped"]> {
+async function wipeDemoContent(
+  actor: Awaited<ReturnType<typeof ensureDemoAccounts>>["visitor"],
+  tx: NpTransaction,
+): Promise<DemoResetResult["wiped"]> {
   const counts: DemoResetResult["wiped"] = {
     pages: 0,
     posts: 0,
@@ -75,17 +68,26 @@ async function wipeDemoContent(actorId: string, tx: NpTransaction): Promise<Demo
   };
 
   for (const collection of RESET_COLLECTIONS) {
-    counts[collection] = await wipeCollection(collection, actorId, tx);
+    counts[collection] = await wipeCollection(collection, actor, tx);
   }
 
-  const db = getDb();
-  const deletedNav = await db
+  const deletedNav = await tx
     .delete(npNavigation)
     .where(eq(npNavigation.siteId, NP_DEFAULT_SITE_ID))
     .returning({ id: npNavigation.id });
   counts.navItems = deletedNav.length;
 
   return counts;
+}
+
+async function acquireResetLock(tx: NpTransaction): Promise<void> {
+  const result = await tx.execute<{ acquired: boolean }>(sql`
+    select pg_try_advisory_xact_lock(hashtext('nexpress-hosted-demo-reset')) as acquired
+  `);
+
+  if (!result.rows[0]?.acquired) {
+    throw new NpConflictError("Demo reset is already running");
+  }
 }
 
 function resolveDemoTheme(themeId?: string) {
@@ -110,7 +112,8 @@ export async function runDemoReset(options: { themeId?: string } = {}): Promise<
     return await withDeferredPostCommit(async () =>
       db.transaction(async (innerTx) => {
         const tx = innerTx as unknown as NpTransaction;
-        const wiped = await wipeDemoContent(visitor.id, tx);
+        await acquireResetLock(tx);
+        const wiped = await wipeDemoContent(visitor, tx);
         await setActiveThemeId(theme.manifest.id, visitor.id, { tx });
         const seeded = await seedAll(visitor, theme, { tx });
         return { wiped, seeded };

@@ -25,7 +25,8 @@ Routes:
 
 - `/admin/demo-login` issues the shared demo admin session.
 - `GET /api/internal/demo-reset` resets seeded demo content when called with
-  `Authorization: Bearer $NP_DEMO_RESET_TOKEN`.
+  `Authorization: Bearer $NP_DEMO_RESET_TOKEN`. Tokens in query strings are not
+  accepted.
 
 Vercel cron calls `/api/internal/demo-reset` every 30 minutes.
 Set Vercel's `CRON_SECRET` to the same value as `NP_DEMO_RESET_TOKEN`.
