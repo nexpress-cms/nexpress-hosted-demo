@@ -1,0 +1,11 @@
+# pnpm 10.6+ native-build allowlist.
+# Without these entries, a fresh `pnpm install` warns
+# ERR_PNPM_IGNORED_BUILDS and the operator has to run
+# `pnpm approve-builds` before any of the framework's
+# native-backed features (image transforms / password hashing /
+# bundle build) work. Approving them up front matches what
+# `pnpm approve-builds` would write here anyway.
+allowBuilds:
+  sharp: true
+  "@node-rs/argon2": true
+  esbuild: true

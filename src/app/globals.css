@@ -1,0 +1,9 @@
+/* Site shell — substance (layers, theme tokens, dark variant, AuthCard `@source inline()`) lives in `@nexpress/app/styles/globals.css`. Only the `@source` lines that point at the consumer's package layout belong here. */
+@import "tailwindcss";
+@import "@nexpress/app/styles/globals.css";
+
+/* Scaffold variant — admin/blocks/editor ship un-minified `dist/*.js` so Tailwind v4's content scanner picks up className strings from node_modules. `@nexpress/app` ships raw src/. Rewrite owned by `pnpm sync-snapshot`. */
+@source "../../node_modules/@nexpress/admin/dist/**/*.js";
+@source "../../node_modules/@nexpress/app/src/**/*.{ts,tsx}";
+@source "../../node_modules/@nexpress/blocks/dist/**/*.js";
+@source "../../node_modules/@nexpress/editor/dist/**/*.js";

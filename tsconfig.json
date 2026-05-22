@@ -1,0 +1,10 @@
+{
+  "extends": "@nexpress/app/config/tsconfig-base",
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  }
+}
