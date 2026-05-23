@@ -14,7 +14,7 @@ import {
 
 export default defineConfig({
   site: {
-    name: "nexpress-published-smoke-20260523-023815",
+    name: "NexPress Hosted Demo",
     url: process.env.SITE_URL || "http://localhost:3000",
   },
   db: {

@@ -4,8 +4,9 @@ Public demo app scaffolded with `create-nexpress@0.1.23`.
 
 Live demo: https://nexpress-hosted-demo.vercel.app
 
-The demo account is reset on a schedule and is intentionally not a
-production admin account.
+The hosted demo uses the default theme and sample content so visitors can try
+the public site, page builder, collections, navigation, plugins, and admin
+workflows without treating the account as a production admin.
 
 ## Demo mode
 
@@ -20,7 +21,7 @@ NP_S3_BUCKET=<bucket>
 NP_S3_REGION=<region>
 NP_DEMO_MODE=1
 NP_DEMO_RESET_TOKEN=<long random token>
-NP_DEMO_THEME_ID=docs
+NP_DEMO_THEME_ID=default
 ```
 
 Useful commands:
@@ -35,6 +36,7 @@ Routes:
 - `GET /api/internal/demo-reset` resets seeded demo content when called with
   `Authorization: Bearer $NP_DEMO_RESET_TOKEN`. Tokens in query strings are not
   accepted.
+- The reset defaults to the `default` theme when `NP_DEMO_THEME_ID` is unset.
 
 Vercel cron calls `/api/internal/demo-reset` daily on Hobby. For the public
 production demo, switch the schedule to `*/30 * * * *` on a Vercel Pro project.

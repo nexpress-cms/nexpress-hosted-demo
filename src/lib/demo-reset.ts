@@ -4,7 +4,6 @@ import {
   deleteDocument,
   findDocuments,
   getDb,
-  getRegisteredThemes,
   getThemeById,
   npNavigation,
   setActiveThemeId,
@@ -39,6 +38,7 @@ export interface DemoResetResult {
 type DemoCollection = "pages" | "posts" | "tags" | "categories";
 
 const RESET_COLLECTIONS: DemoCollection[] = ["pages", "posts", "tags", "categories"];
+const DEFAULT_DEMO_THEME_ID = "default";
 
 async function wipeCollection(
   collection: DemoCollection,
@@ -91,8 +91,8 @@ async function acquireResetLock(tx: NpTransaction): Promise<void> {
 }
 
 function resolveDemoTheme(themeId?: string) {
-  const requested = themeId ?? process.env.NP_DEMO_THEME_ID;
-  const theme = requested ? getThemeById(requested) : getRegisteredThemes()[0];
+  const requested = themeId || process.env.NP_DEMO_THEME_ID || DEFAULT_DEMO_THEME_ID;
+  const theme = getThemeById(requested);
   if (!theme) {
     throw new Error(
       requested
