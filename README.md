@@ -10,6 +10,12 @@ production admin account.
 Required demo env:
 
 ```bash
+DATABASE_URL=<managed postgres url>
+NP_SECRET=<long random secret>
+SITE_URL=https://nexpress-hosted-demo.vercel.app
+NP_STORAGE_ADAPTER=s3
+NP_S3_BUCKET=<bucket>
+NP_S3_REGION=<region>
 NP_DEMO_MODE=1
 NP_DEMO_RESET_TOKEN=<long random token>
 NP_DEMO_THEME_ID=docs
