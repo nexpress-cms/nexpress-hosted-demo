@@ -1,8 +1,6 @@
 import {
   NP_DEFAULT_SITE_ID,
   NpConflictError,
-  deleteDocument,
-  findDocuments,
   getDb,
   getThemeById,
   npNavigation,
@@ -35,30 +33,9 @@ export interface DemoResetResult {
   };
 }
 
-type DemoCollection = "pages" | "posts" | "tags" | "categories";
-
-const RESET_COLLECTIONS: DemoCollection[] = ["pages", "posts", "tags", "categories"];
 const DEFAULT_DEMO_THEME_ID = "default";
 
-async function wipeCollection(
-  collection: DemoCollection,
-  actor: Awaited<ReturnType<typeof ensureDemoAccounts>>["visitor"],
-  tx: NpTransaction,
-): Promise<number> {
-  const result = await findDocuments<{ id: string }>(collection, { limit: 10_000 });
-  let deleted = 0;
-  for (const doc of result.docs) {
-    if (typeof doc.id !== "string") continue;
-    await deleteDocument(collection, doc.id, actor, { tx });
-    deleted += 1;
-  }
-  return deleted;
-}
-
-async function wipeDemoContent(
-  actor: Awaited<ReturnType<typeof ensureDemoAccounts>>["visitor"],
-  tx: NpTransaction,
-): Promise<DemoResetResult["wiped"]> {
+async function wipeDemoContent(tx: NpTransaction): Promise<DemoResetResult["wiped"]> {
   const counts: DemoResetResult["wiped"] = {
     pages: 0,
     posts: 0,
@@ -67,9 +44,67 @@ async function wipeDemoContent(
     navItems: 0,
   };
 
-  for (const collection of RESET_COLLECTIONS) {
-    counts[collection] = await wipeCollection(collection, actor, tx);
-  }
+  await tx.execute(sql`
+    delete from np_comments
+    where site_id = ${NP_DEFAULT_SITE_ID}
+      and target_type in ('pages', 'posts', 'tags', 'categories')
+  `);
+  await tx.execute(sql`
+    delete from np_follows
+    where site_id = ${NP_DEFAULT_SITE_ID}
+      and target_type in ('pages', 'posts', 'tags', 'categories')
+  `);
+  await tx.execute(sql`
+    delete from np_reactions
+    where site_id = ${NP_DEFAULT_SITE_ID}
+      and target_type in ('pages', 'posts', 'tags', 'categories')
+  `);
+  await tx.execute(sql`
+    delete from np_reports
+    where site_id = ${NP_DEFAULT_SITE_ID}
+      and target_type in ('pages', 'posts', 'tags', 'categories')
+  `);
+  await tx.execute(sql`
+    delete from np_media_refs
+    where collection in ('pages', 'posts', 'tags', 'categories')
+  `);
+  await tx.execute(sql`
+    delete from np_revisions
+    where collection in ('pages', 'posts', 'tags', 'categories')
+  `);
+  await tx.execute(sql`
+    delete from np_slug_history
+    where site_id = ${NP_DEFAULT_SITE_ID}
+      and collection in ('pages', 'posts', 'tags', 'categories')
+  `);
+
+  const deletedPages = await tx.execute<{ id: string }>(sql`
+    delete from np_c_pages
+    where site_id = ${NP_DEFAULT_SITE_ID}
+    returning id
+  `);
+  counts.pages = deletedPages.rows.length;
+
+  const deletedPosts = await tx.execute<{ id: string }>(sql`
+    delete from np_c_posts
+    where site_id = ${NP_DEFAULT_SITE_ID}
+    returning id
+  `);
+  counts.posts = deletedPosts.rows.length;
+
+  const deletedTags = await tx.execute<{ id: string }>(sql`
+    delete from np_c_tags
+    where site_id = ${NP_DEFAULT_SITE_ID}
+    returning id
+  `);
+  counts.tags = deletedTags.rows.length;
+
+  const deletedCategories = await tx.execute<{ id: string }>(sql`
+    delete from np_c_categories
+    where site_id = ${NP_DEFAULT_SITE_ID}
+    returning id
+  `);
+  counts.categories = deletedCategories.rows.length;
 
   const deletedNav = await tx
     .delete(npNavigation)
@@ -113,7 +148,7 @@ export async function runDemoReset(options: { themeId?: string } = {}): Promise<
       db.transaction(async (innerTx) => {
         const tx = innerTx as unknown as NpTransaction;
         await acquireResetLock(tx);
-        const wiped = await wipeDemoContent(visitor, tx);
+        const wiped = await wipeDemoContent(tx);
         await setActiveThemeId(theme.manifest.id, visitor.id, { tx });
         const seeded = await seedAll(visitor, theme, { tx });
         return { wiped, seeded };
