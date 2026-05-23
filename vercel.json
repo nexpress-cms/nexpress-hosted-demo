@@ -3,11 +3,7 @@
   "crons": [
     {
       "path": "/api/internal/demo-reset",
-      "schedule": "*/30 * * * *"
-    },
-    {
-      "path": "/api/internal/publish-scheduled",
-      "schedule": "*/2 * * * *"
+      "schedule": "0 0 * * *"
     }
   ]
 }
