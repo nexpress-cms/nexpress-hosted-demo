@@ -2,6 +2,8 @@
 
 Public demo app scaffolded with `create-nexpress@0.1.23`.
 
+Live demo: https://nexpress-hosted-demo.vercel.app
+
 The demo account is reset on a schedule and is intentionally not a
 production admin account.
 
@@ -37,6 +39,9 @@ Routes:
 Vercel cron calls `/api/internal/demo-reset` daily on Hobby. For the public
 production demo, switch the schedule to `*/30 * * * *` on a Vercel Pro project.
 Set Vercel's `CRON_SECRET` to the same value as `NP_DEMO_RESET_TOKEN`.
+
+GitHub is connected to Vercel. Pushes to `main` deploy the production demo, and
+pull requests create preview deployments.
 
 ## Getting started
 
