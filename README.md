@@ -8,6 +8,8 @@ The hosted demo uses the default theme and sample content so visitors can try
 the public site, page builder, collections, navigation, plugins, and admin
 workflows without treating the account as a production admin.
 
+Detailed operating notes live in [docs/demo-operations.md](./docs/demo-operations.md).
+
 ## Demo mode
 
 Required demo env:
