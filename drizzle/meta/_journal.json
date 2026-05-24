@@ -8,6 +8,13 @@
       "when": 1779520093537,
       "tag": "0000_normal_dreadnoughts",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1779596074148,
+      "tag": "0001_noisy_winter_soldier",
+      "breakpoints": true
     }
   ]
 }

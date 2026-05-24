@@ -22,6 +22,7 @@
     "seed:content": "tsx scripts/seed-content.ts",
     "setup": "tsx scripts/setup-server.ts",
     "worker": "tsx scripts/worker.ts",
+    "db:check": "pnpm db:generate && git diff --exit-code -- drizzle && test -z \"$(git status --porcelain --untracked-files=all -- drizzle)\"",
     "db:generate": "pnpm schema:gen && drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "pnpm schema:gen && drizzle-kit push",

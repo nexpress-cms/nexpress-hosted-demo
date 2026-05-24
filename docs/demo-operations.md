@@ -62,8 +62,15 @@ Before promoting a deployment:
 ```bash
 pnpm run deploy:plan -- --target vercel
 pnpm run doctor:prod -- --target vercel
+pnpm db:check
 pnpm demo:reset
 ```
+
+When updating `@nexpress/*` versions, treat schema changes as part of the
+release, not as a follow-up. Run `pnpm db:generate`, commit any new files under
+`drizzle/`, apply `pnpm db:migrate` to the production database, and only then
+promote or merge the deployment. The CI `db:check` step intentionally fails if
+the generated schema wants a migration that is not committed.
 
 ## Public Content
 
