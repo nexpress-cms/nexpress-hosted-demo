@@ -12,10 +12,14 @@ import {
 // @nexpress:themes-imports-start
 // @nexpress:themes-imports-end
 
+const siteUrl =
+  process.env.SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
 export default defineConfig({
   site: {
     name: "NexPress Hosted Demo",
-    url: process.env.SITE_URL || "http://localhost:3000",
+    url: siteUrl,
   },
   db: {
     connectionString: process.env.DATABASE_URL!,
