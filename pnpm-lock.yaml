@@ -9,44 +9,44 @@ importers:
   .:
     dependencies:
       '@nexpress/admin':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/app':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(drizzle-kit@0.31.10)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(drizzle-kit@0.31.10)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/auth-pages':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/blocks':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/core':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)
       '@nexpress/editor':
-        specifier: 0.3.11
-        version: 0.3.11(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/next':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/plugin-sdk':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/theme':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/theme-default':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/theme-docs':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/theme-magazine':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@nexpress/theme-portfolio':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@vercel/analytics':
         specifier: ^2.0.1
         version: 2.0.1(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react@19.2.6)
@@ -67,8 +67,8 @@ importers:
         version: 19.2.6(react@19.2.6)
     devDependencies:
       '@nexpress/cli':
-        specifier: 0.3.11
-        version: 0.3.11(@types/pg@8.20.0)
+        specifier: 0.3.12
+        version: 0.3.12(@types/pg@8.20.0)
       '@tailwindcss/postcss':
         specifier: ^4.0.0
         version: 4.3.0
@@ -1002,15 +1002,15 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
-  '@nexpress/admin@0.3.11':
-    resolution: {integrity: sha512-waVkRIrGAWjs/cVGzQXnq5SR5goMsRBTAGlwTfLSKFD+iXBZ72GzPG+G6bpfvJq+2aoN1fhBPd2VqUnNWdeglA==}
+  '@nexpress/admin@0.3.12':
+    resolution: {integrity: sha512-zBPTgugzoARDMEHZpOyzmHhQG0lJNOmVIuM9B7DOIt50bsWD5lXifwpdJQoAX0dkDgP+b5vgqDj/9V5P6urhAQ==}
     engines: {node: '>=20'}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@nexpress/app@0.3.11':
-    resolution: {integrity: sha512-KBvyvLSH2tWHl38Sx1vTBx/62/t5X+SrFHzZkeQXXek0tEmc8w46FYzi3hbd8W09/fNpyrWyYF2Zy4xYW7KY0g==}
+  '@nexpress/app@0.3.12':
+    resolution: {integrity: sha512-W+JssmtX+EgfzyRy1rKa20uBcApcbxKTNwbP+ZDbCfBtwc5AdkEBkaMjgcRIJGK8weFEn6QEDnSXBH0bNrkJjQ==}
     peerDependencies:
       drizzle-kit: ^0.31.0
       next: ^15.0.0 || ^16.0.0
@@ -1024,28 +1024,28 @@ packages:
       pg-boss:
         optional: true
 
-  '@nexpress/auth-pages@0.3.11':
-    resolution: {integrity: sha512-1AFkmXgnIa5WJI97QrBG7zyJaJ2afFE9Ks85/YCZxRDi3HZUtlnnTo6NgX5my/RUTmztOeNFdKLRjDOzyKDUPg==}
+  '@nexpress/auth-pages@0.3.12':
+    resolution: {integrity: sha512-4u1Bc8zrkAY3uGe/2ZTu9dohMl1pW+qY6BTlvRv39R0MOaciLTaBBbDWFPkDRzvpgxaCDUQtpzSpIfXHBuaDwQ==}
     engines: {node: '>=20'}
     peerDependencies:
       next: '>=15'
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@nexpress/blocks@0.3.11':
-    resolution: {integrity: sha512-evdUPN1HM125jYfr4PoC9Ki5HBiD2ipiXD0lZK5HQm2NwHA8EJHI7JmlayqqKXhocnqjfQ9UXk6QCulqrNZ0vA==}
+  '@nexpress/blocks@0.3.12':
+    resolution: {integrity: sha512-9sbyB5ZEK38zmPV3RlJtVQIv8TktMWW3cl+skqS8mFBjTLcwRLh/Wm6n6+NvhXAv5D9evPM7MqeVXLBFaXA5YA==}
     engines: {node: '>=20'}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@nexpress/cli@0.3.11':
-    resolution: {integrity: sha512-GlkyrWn2kFdQZhUd8VYFGFhcfvY5/DtsDXJVPMqcl9Ofe/0jTTVt9ZLpSihSax75bChegmHAgAajjLNPezVBNA==}
+  '@nexpress/cli@0.3.12':
+    resolution: {integrity: sha512-I3e4pLCt9s7djY8k911NRvvgTLwXtL+69gAUK1F9w5uAgYdzhUmq1t4Uc/n837zygQXV7awZDmxFvyqJ01WhnQ==}
     engines: {node: '>=20'}
     hasBin: true
 
-  '@nexpress/core@0.3.11':
-    resolution: {integrity: sha512-HkpiWlJBnhQzWk9J+RZi9WTXJ5y5r8vQmeoPCr9ZUU2txetOor5VthtaZpKoPiukVGxHlSETIgdz3D7GYybd8g==}
+  '@nexpress/core@0.3.12':
+    resolution: {integrity: sha512-4PrYhAEnRpzx7h2A1pMroSio2SLlj8yXUDWzVkV+NN8G+MwGUC2F1fZ7T5GL9OwwCPLrNTZoNuw6mgph49iu3w==}
     engines: {node: '>=20'}
     peerDependencies:
       nodemailer: ^7.0.0
@@ -1053,121 +1053,121 @@ packages:
       nodemailer:
         optional: true
 
-  '@nexpress/editor@0.3.11':
-    resolution: {integrity: sha512-glrTnqTdqGrXeLmg3LAN5+GoYmygtLbQou7G6aR7Cg2OtSTpHmFm6KkPem7YNZXSBHdnvr8/kWmLc76HqgE0tg==}
+  '@nexpress/editor@0.3.12':
+    resolution: {integrity: sha512-XatUQsehEf43Y0K7KRYtBva+0CowOrrCAKqGumsj5tsgtu0z4/VUXm3c+vGB4Btt8SB9NQxieljkpb3tGyYImw==}
     engines: {node: '>=20'}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@nexpress/next@0.3.11':
-    resolution: {integrity: sha512-G15YZdXg98IgbSvYXBhvb0JYxSqyYf/xadJfGOQzP8qlelW8vAOfx0ufSxY/bgvTGs8pqrrEvTO1ZpvJTSGs4g==}
+  '@nexpress/next@0.3.12':
+    resolution: {integrity: sha512-RWARtsTo6M3nM1bIZQ+nh39idFaOwZjOfFEndnGZZC2eI//ZLrrFnXwa+2Vgo9D5vqyjVmwTBcpG+CNB67Z2AQ==}
     engines: {node: '>=20'}
     peerDependencies:
       next: '>=15'
       react: ^19.0.0
 
-  '@nexpress/oauth-providers@0.3.11':
-    resolution: {integrity: sha512-+XGvp1OCb4rH0grK4Xw/jOqGHnE79lhYR+tFqr6JvxR9nY0l/AHBAGk9IWzDzy9jJDJMnpEgoAF99wm4JlJF9g==}
+  '@nexpress/oauth-providers@0.3.12':
+    resolution: {integrity: sha512-jLereH2scd94L946h6dpzrm/gNuEmKHpagb2p6C+1lIz/5fJFrCSek8Br2V3fvzEYEQZN46eo1OVSFmv56oGYw==}
     engines: {node: '>=20'}
 
-  '@nexpress/plugin-block-callout@0.3.11':
-    resolution: {integrity: sha512-DmASYY8oMQlk9CIZG8fXQpr5ZRSbVs/61gZ3V/4KM24GiJ9YYSmX59d2B2X0JYFeGXL/hXdUqMfsU3xeq/lizg==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      react: ^19.0.0
-
-  '@nexpress/plugin-block-embed@0.3.11':
-    resolution: {integrity: sha512-+YQ7favn2KUJWwxlgXX7suRGCeYl7UG91GrGrF+HROfwvX4JB510tiPH+dYzc2OHsAv+iyjiFKvbz7jP9w/ZcQ==}
+  '@nexpress/plugin-block-callout@0.3.12':
+    resolution: {integrity: sha512-ZWN3ErtSBG2san/tuMaDDiKDBQPxJFUvPzkYFfHwGrasP7eyo4sKK/8Sr/KszYh2dpTZHHtEaqprdPPHAlTKjg==}
     engines: {node: '>=20'}
     peerDependencies:
       react: ^19.0.0
 
-  '@nexpress/plugin-block-latest-posts@0.3.11':
-    resolution: {integrity: sha512-5Hqh2pAlHBi33r8iEBaUU597SeFrnDi+3gW63wnpL6CD44XhuExCjPsug9QC+AhmWZL6JnfqSmXS3LDX5kJ9aw==}
+  '@nexpress/plugin-block-embed@0.3.12':
+    resolution: {integrity: sha512-363cpi4Ggrwu6025nuzs5Z9iT73PkMCZNSkejrwCUQSMmfHdx4iONrahyd3BsTW16JkqRMwCcMQrlFULvwrIXg==}
     engines: {node: '>=20'}
     peerDependencies:
       react: ^19.0.0
 
-  '@nexpress/plugin-block-newsletter@0.3.11':
-    resolution: {integrity: sha512-m7s7u6UzwqtoL+rXKEfbF/rdz5bRU/9Kregsv0H2ch+M0JZ8j6OOP5w77wL7IlBJIoTssLGBSVdDhvYldK+1dA==}
+  '@nexpress/plugin-block-latest-posts@0.3.12':
+    resolution: {integrity: sha512-V1N914riTgpdLt9GfPDN5fi0DDL+c3L/w3cJufm3Uw3N2LjvqPRsmWMhvOgx8BnRCndgH1Qv4qhOQcMHEgPvqg==}
     engines: {node: '>=20'}
     peerDependencies:
       react: ^19.0.0
 
-  '@nexpress/plugin-block-pricing@0.3.11':
-    resolution: {integrity: sha512-BO0FBVFupssof1TuEKYd0p5OZyLTONCOflYxcTB1CT1Lh/Bqn4WXnvAv5QmwCQCsDaxGWqi6nQlIHCMyfyxDRA==}
+  '@nexpress/plugin-block-newsletter@0.3.12':
+    resolution: {integrity: sha512-fLGM0+E4VQ6BKNOQsJCLsLyKZqhLIWak8hhwZvHGJuY56dXN4ydLNGf2aQb8RJrJYX5JYPSXM9lF6KCNTxvJGQ==}
     engines: {node: '>=20'}
     peerDependencies:
       react: ^19.0.0
 
-  '@nexpress/plugin-block-stats@0.3.11':
-    resolution: {integrity: sha512-zb+DvOGMxoU6xgtCxWRQrqouWl1se8hqRqbZF6qkpyBMTl7jT2vzv9LdZaeLg6YDCVH5jVKsmEhIPQwOcqLBMg==}
+  '@nexpress/plugin-block-pricing@0.3.12':
+    resolution: {integrity: sha512-lZlK4Ub5ngFMsq02wR8dgCzBD61bLWPmnELsPHyosIG40dSEZwwaDNGMa+gPmkAoZFjTJUm+vPPQAn3GxiebJQ==}
     engines: {node: '>=20'}
     peerDependencies:
       react: ^19.0.0
 
-  '@nexpress/plugin-forum@0.3.11':
-    resolution: {integrity: sha512-0ymDeYEK9muK/a3IsV2PuvncyJENEPpHP6njC+nmK2u4+FUId1ecC0mLOj8/9rOz5MCj+g9U2sOBmxhMUXV19w==}
+  '@nexpress/plugin-block-stats@0.3.12':
+    resolution: {integrity: sha512-eljGL2qLxVk8pmb22dIW3xydV/ImuMd2PBnI8xHzgm+sxGw80kj2iL0LbvI6/8gtNfB3Yefe3XsUsqa37gmMow==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      react: ^19.0.0
+
+  '@nexpress/plugin-forum@0.3.12':
+    resolution: {integrity: sha512-FoZ35cyzd3qUmHDBnlw2sj1zotpa0fNExhAM1N1ujVSSi7NsZnruIcM4UuPp94QMyik+LtNpRz3iGeJ/6u7Yew==}
     engines: {node: '>=20'}
     peerDependencies:
       next: '>=15'
       react: ^19.0.0
 
-  '@nexpress/plugin-oauth-github@0.3.11':
-    resolution: {integrity: sha512-eOelgN7MUOMgRGD+spDxfomsrQOPVn3RLxv8rjWdwQJm7C72f6WWL4sz1CT9E3jKMeqCP/DlB9vVuOa9BEQWcA==}
+  '@nexpress/plugin-oauth-github@0.3.12':
+    resolution: {integrity: sha512-ez4eLT6j/ePTf/GzbNZy7/I6Qs1WrtyRJrp8KUAj8QTpVpc5IkHBpCRn7Ync1N+Jg6QHyPEdEG5cVVsiRr5TbQ==}
     engines: {node: '>=20'}
 
-  '@nexpress/plugin-oauth-google@0.3.11':
-    resolution: {integrity: sha512-LAeEVmEdYwd3crf2mu6ABbuM2f/WOj4Hx2mMlzjalICPn+5W/46BSUiyFecF05F9kM0olhz9fn7xJB9FzKZYOA==}
+  '@nexpress/plugin-oauth-google@0.3.12':
+    resolution: {integrity: sha512-C/dkanxH1rGlud0yCFpBTaxMCsWxHdAiBzMu8jXAcsgplYR7mWevqPtmEKsK6lpAkt1Lr6Xy2qQAWPaKugjwRw==}
     engines: {node: '>=20'}
 
-  '@nexpress/plugin-reading-time@0.3.11':
-    resolution: {integrity: sha512-iJugxKRPn1Im7D/yRej4pShA4bPpCVkPB5SdTSSvsP2s1xmcwYlI8li8GuJd/aJXrdJBZm9iro0NzpVYcS3dPA==}
+  '@nexpress/plugin-reading-time@0.3.12':
+    resolution: {integrity: sha512-q6Xmbv5io5C9qnhvgroPs65cR7h9ansY1NT19/BUR+Wf0asKEPonhQm95KFE2OmbYLhFRxmu6EhnaKljiMT7jw==}
     engines: {node: '>=20'}
 
-  '@nexpress/plugin-sdk@0.3.11':
-    resolution: {integrity: sha512-k2SUZudB9/nC5uqDdL3M/8ent2kXdCoHQWmwZmQVgTtQvTUX52XmS1jnxvjrCmP2xgMLSFnk/W4DIAP4/l9NpQ==}
+  '@nexpress/plugin-sdk@0.3.12':
+    resolution: {integrity: sha512-Lynk4o/Dwh92VUgbmVxV23XSurKCrs2H4X9qe1IP/TiRo54GV7t6nDAH7JRlOQq9UKV1Plqee45DY9q34jQbnQ==}
     engines: {node: '>=20'}
 
-  '@nexpress/plugin-seo-audit@0.3.11':
-    resolution: {integrity: sha512-FI7W8uozu+EDyHZ1FvK6vAseIZn3nYrNzE9eizwkHdUccivzDavVw7JaeINjsFpYqqKj9Nm12+eUWT3YB1ih2A==}
+  '@nexpress/plugin-seo-audit@0.3.12':
+    resolution: {integrity: sha512-d58T66crck5GA5UQbzwz9F6vA50HPkkjRlSYoeIxyJ4h0LJkEKJn2wJrUCZvhMDWUligoGDjcAxd/7aBOqDL6Q==}
     engines: {node: '>=20'}
 
-  '@nexpress/theme-default@0.3.11':
-    resolution: {integrity: sha512-IhYRkbtteaElj0Xml//Y9M6CWcNseCJn7pyxh+rms33w+whZtc0QxU6TuL7WhCx6O9k60Gfv0hMVEthLd5EMTg==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      next: ^15.0.0 || ^16.0.0
-      react: ^19.0.0
-      react-dom: ^19.0.0
-
-  '@nexpress/theme-docs@0.3.11':
-    resolution: {integrity: sha512-KzeOdsCayhhXPjuGxXZmtZyytyD2C1ZaiH86nR42HWGLYPHc5bDoq2uno8+5Tw4GIBeoqFsYy7wt+4U2VE5lKA==}
+  '@nexpress/theme-default@0.3.12':
+    resolution: {integrity: sha512-jk0gM96DqopNutIwO7WYyjlYgwgGwW/uyQx0fVP14nxJvqkXo5s7TT+R5Z04/f3hles+wGXSue9w+cUZybIU7g==}
     engines: {node: '>=20'}
     peerDependencies:
       next: ^15.0.0 || ^16.0.0
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@nexpress/theme-magazine@0.3.11':
-    resolution: {integrity: sha512-q34fmeXs5OlrilvhruHB8XiVfxQOXIyRQLKek7IHM4wwclJFd5DNGfGeXWxuvtkzp0MOvYiAYHDjzoiAwu8QDA==}
+  '@nexpress/theme-docs@0.3.12':
+    resolution: {integrity: sha512-6AbCZPM+7RvZ14mlePldUE2sNu+wpHN6NnzVFMmVCR3p10YKEG0Ih49HN1W7ibdy43iAvOayzGhtrMQkWsp2Aw==}
     engines: {node: '>=20'}
     peerDependencies:
       next: ^15.0.0 || ^16.0.0
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@nexpress/theme-portfolio@0.3.11':
-    resolution: {integrity: sha512-yTJR2tBDrSpYmQoNKFuO8gH4/faBeTP35fTCU8hUEYFd8sz2Nm/z3jeuHf+F7QUn1FMf27rJncTB+9i7j8pvzA==}
+  '@nexpress/theme-magazine@0.3.12':
+    resolution: {integrity: sha512-n48x+XTgMNsH8h6mZAYcv8iTGj2aYvP4ckJJzUFjIW18mB2S9ozcJNt8Ckx2hH405lXl4CIu9Afb0kFbQVpwkQ==}
     engines: {node: '>=20'}
     peerDependencies:
       next: ^15.0.0 || ^16.0.0
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@nexpress/theme@0.3.11':
-    resolution: {integrity: sha512-jAoKDLhsXGsFRvAJt0PprGwmFlo7lDey8YWJ2XemdExmgngvtzFVD4AaZkxiZAYihuN54yKKc0H4rftr0gCRgg==}
+  '@nexpress/theme-portfolio@0.3.12':
+    resolution: {integrity: sha512-fNi4XDkliSKinLWnPbH6MUTzz4KjhCem7tjCuDYXPqa6N3gY9QluR7x4h59WMvTKaOITAsEJsWCHWEBuUeTnNw==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      next: ^15.0.0 || ^16.0.0
+      react: ^19.0.0
+      react-dom: ^19.0.0
+
+  '@nexpress/theme@0.3.12':
+    resolution: {integrity: sha512-b/m49jp1f3fG4eABsZE3vTSn+vRajo66OEZfwYhzu3KNL/9g96sgyhorfNGLb53j/uryN//snXbDHwQqFHBhww==}
     engines: {node: '>=20'}
     peerDependencies:
       next: ^16.2.6
@@ -3456,15 +3456,15 @@ snapshots:
       '@tybys/wasm-util': 0.10.2
     optional: true
 
-  '@nexpress/admin@0.3.11(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/admin@0.3.12(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
       '@dnd-kit/core': 6.3.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@dnd-kit/sortable': 10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react@19.2.6)
       '@dnd-kit/utilities': 3.2.2(react@19.2.6)
       '@hookform/resolvers': 5.2.2(react-hook-form@7.76.0(react@19.2.6))
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/editor': 0.3.11(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/editor': 0.3.12(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       '@radix-ui/react-collapsible': 1.1.12(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@radix-ui/react-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@radix-ui/react-dropdown-menu': 2.1.16(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -3520,31 +3520,31 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/app@0.3.11(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(drizzle-kit@0.31.10)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/app@0.3.12(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(drizzle-kit@0.31.10)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/admin': 0.3.11(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/auth-pages': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/editor': 0.3.11(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/next': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-block-callout': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-block-embed': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-block-latest-posts': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-block-newsletter': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-block-pricing': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-block-stats': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-forum': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-oauth-github': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-oauth-google': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-reading-time': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-seo-audit': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/theme': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/theme-default': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/theme-docs': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/theme-magazine': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/theme-portfolio': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/admin': 0.3.12(@types/pg@8.20.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/auth-pages': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/editor': 0.3.12(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/next': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-block-callout': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-block-embed': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-block-latest-posts': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-block-newsletter': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-block-pricing': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-block-stats': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-forum': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-oauth-github': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-oauth-google': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-reading-time': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-seo-audit': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/theme': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/theme-default': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/theme-docs': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/theme-magazine': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/theme-portfolio': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       dotenv: 17.4.2
       drizzle-orm: 0.45.2(@types/pg@8.20.0)(pg@8.21.0)
       next: 16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -3588,10 +3588,10 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/auth-pages@0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/auth-pages@0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/next': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/next': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       drizzle-orm: 0.45.2(@types/pg@8.20.0)(pg@8.21.0)
       next: 16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react: 19.2.6
@@ -3630,10 +3630,10 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/blocks@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/blocks@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/editor': 0.3.11(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/editor': 0.3.12(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
     transitivePeerDependencies:
@@ -3669,9 +3669,9 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/cli@0.3.11(@types/pg@8.20.0)':
+  '@nexpress/cli@0.3.12(@types/pg@8.20.0)':
     dependencies:
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
       picocolors: 1.1.1
       ts-morph: 28.0.0
     transitivePeerDependencies:
@@ -3706,7 +3706,7 @@ snapshots:
       - sql.js
       - sqlite3
 
-  '@nexpress/core@0.3.11(@types/pg@8.20.0)':
+  '@nexpress/core@0.3.12(@types/pg@8.20.0)':
     dependencies:
       '@aws-sdk/client-s3': 3.1051.0
       '@node-rs/argon2': 2.0.2
@@ -3749,7 +3749,7 @@ snapshots:
       - sql.js
       - sqlite3
 
-  '@nexpress/editor@0.3.11(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/editor@0.3.12(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
       '@lexical/code': 0.44.0
       '@lexical/link': 0.44.0
@@ -3765,11 +3765,11 @@ snapshots:
     transitivePeerDependencies:
       - yjs
 
-  '@nexpress/next@0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/next@0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/theme': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/theme': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       next: 16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react: 19.2.6
     transitivePeerDependencies:
@@ -3806,9 +3806,9 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/oauth-providers@0.3.11(@types/pg@8.20.0)':
+  '@nexpress/oauth-providers@0.3.12(@types/pg@8.20.0)':
     dependencies:
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
       arctic: 3.7.0
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -3842,10 +3842,10 @@ snapshots:
       - sql.js
       - sqlite3
 
-  '@nexpress/plugin-block-callout@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-block-callout@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       react: 19.2.6
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -3881,10 +3881,10 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-block-embed@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-block-embed@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       react: 19.2.6
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -3920,10 +3920,10 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-block-latest-posts@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-block-latest-posts@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       react: 19.2.6
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -3959,10 +3959,10 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-block-newsletter@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-block-newsletter@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       react: 19.2.6
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -3998,10 +3998,10 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-block-pricing@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-block-pricing@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       react: 19.2.6
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -4037,10 +4037,10 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-block-stats@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-block-stats@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       react: 19.2.6
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -4076,13 +4076,13 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-forum@0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-forum@0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/editor': 0.3.11(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/next': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/editor': 0.3.12(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/next': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       drizzle-orm: 0.45.2(@types/pg@8.20.0)(pg@8.21.0)
       next: 16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react: 19.2.6
@@ -4121,11 +4121,11 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-oauth-github@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-oauth-github@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/oauth-providers': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/oauth-providers': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       zod: 4.4.3
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -4162,11 +4162,11 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-oauth-google@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-oauth-google@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/oauth-providers': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/oauth-providers': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       zod: 4.4.3
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -4203,9 +4203,9 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-reading-time@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-reading-time@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       zod: 4.4.3
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -4242,10 +4242,10 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-sdk@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-sdk@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
       zod: 4.4.3
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -4282,9 +4282,9 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/plugin-seo-audit@0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/plugin-seo-audit@0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/plugin-sdk': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/plugin-sdk': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       zod: 4.4.3
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -4321,13 +4321,13 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/theme-default@0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/theme-default@0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/editor': 0.3.11(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/next': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/theme': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/editor': 0.3.12(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/next': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/theme': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       drizzle-orm: 0.45.2(@types/pg@8.20.0)(pg@8.21.0)
       next: 16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react: 19.2.6
@@ -4366,13 +4366,13 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/theme-docs@0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/theme-docs@0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/editor': 0.3.11(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/next': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/theme': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/editor': 0.3.12(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/next': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/theme': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       next: 16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
@@ -4410,13 +4410,13 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/theme-magazine@0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/theme-magazine@0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/editor': 0.3.11(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/next': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/theme': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/editor': 0.3.12(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/next': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/theme': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       next: 16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
@@ -4454,12 +4454,12 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/theme-portfolio@0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/theme-portfolio@0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
-      '@nexpress/next': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/theme': 0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
+      '@nexpress/next': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/theme': 0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
       next: 16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
@@ -4497,10 +4497,10 @@ snapshots:
       - sqlite3
       - yjs
 
-  '@nexpress/theme@0.3.11(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
+  '@nexpress/theme@0.3.12(@types/pg@8.20.0)(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)':
     dependencies:
-      '@nexpress/blocks': 0.3.11(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
-      '@nexpress/core': 0.3.11(@types/pg@8.20.0)
+      '@nexpress/blocks': 0.3.12(@types/pg@8.20.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yjs@13.6.30)
+      '@nexpress/core': 0.3.12(@types/pg@8.20.0)
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
     optionalDependencies:
