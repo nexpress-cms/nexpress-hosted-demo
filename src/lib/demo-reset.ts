@@ -7,6 +7,7 @@ import {
   setActiveThemeId,
   withCurrentSite,
   withDeferredPostCommit,
+  type NpRegisteredTheme,
   type NpTransaction,
 } from "@nexpress/core";
 import { eq, sql } from "drizzle-orm";
@@ -34,6 +35,28 @@ export interface DemoResetResult {
 }
 
 const DEFAULT_DEMO_THEME_ID = "default";
+
+interface DemoThemeSeedFixture {
+  pages?: readonly unknown[];
+  posts?: readonly unknown[];
+}
+
+function getDemoSeedFixture(theme: NpRegisteredTheme): DemoThemeSeedFixture {
+  const impl = theme.impl as { seedContent?: DemoThemeSeedFixture } | null;
+  return impl?.seedContent ?? {};
+}
+
+function assertDemoSeedFixture(theme: NpRegisteredTheme): void {
+  const seedContent = getDemoSeedFixture(theme);
+  const pageCount = seedContent.pages?.length ?? 0;
+  const postCount = seedContent.posts?.length ?? 0;
+
+  if (pageCount === 0 || postCount === 0) {
+    throw new Error(
+      `Demo theme "${theme.manifest.id}" must include baseline page and post seed content before reset can run`,
+    );
+  }
+}
 
 async function wipeDemoContent(tx: NpTransaction): Promise<DemoResetResult["wiped"]> {
   const counts: DemoResetResult["wiped"] = {
@@ -139,8 +162,9 @@ function resolveDemoTheme(themeId?: string) {
 }
 
 export async function runDemoReset(options: { themeId?: string } = {}): Promise<DemoResetResult> {
-  const { visitor } = await ensureDemoAccounts();
   const theme = resolveDemoTheme(options.themeId);
+  assertDemoSeedFixture(theme);
+  const { visitor } = await ensureDemoAccounts();
 
   const result = await withCurrentSite(NP_DEFAULT_SITE_ID, async () => {
     const db = getDb();
@@ -151,6 +175,11 @@ export async function runDemoReset(options: { themeId?: string } = {}): Promise<
         const wiped = await wipeDemoContent(tx);
         await setActiveThemeId(theme.manifest.id, visitor.id, { tx });
         const seeded = await seedAll(visitor, theme, { tx });
+        if (seeded.pages.created === 0 || seeded.posts.created === 0) {
+          throw new Error(
+            `Demo reset for theme "${theme.manifest.id}" did not recreate baseline pages and posts`,
+          );
+        }
         return { wiped, seeded };
       }),
     );

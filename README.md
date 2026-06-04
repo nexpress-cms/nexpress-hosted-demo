@@ -39,6 +39,8 @@ Routes:
   `Authorization: Bearer $NP_DEMO_RESET_TOKEN`. Tokens in query strings are not
   accepted.
 - The reset defaults to the `default` theme when `NP_DEMO_THEME_ID` is unset.
+- The reset fails before committing if the selected theme has no baseline page
+  and post seed content.
 
 Vercel cron calls `/api/internal/demo-reset` daily on Hobby. For the public
 production demo, switch the schedule to `*/30 * * * *` on a Vercel Pro project.
