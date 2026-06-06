@@ -16,6 +16,13 @@ const siteUrl =
   process.env.SITE_URL ||
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
+// Preview deployments are public smoke builds; production and local setups still require NP_SECRET.
+const authSecret =
+  process.env.NP_SECRET ||
+  (process.env.VERCEL_ENV === "preview"
+    ? "nexpress-hosted-demo-preview-only-auth-secret"
+    : undefined);
+
 export default defineConfig({
   site: {
     name: "NexPress Hosted Demo",
@@ -33,7 +40,7 @@ export default defineConfig({
   ],
   i18n: defaultI18n,
   auth: {
-    secret: process.env.NP_SECRET!,
+    secret: authSecret!,
   },
   plugins: [
     ...defaultPlugins,
