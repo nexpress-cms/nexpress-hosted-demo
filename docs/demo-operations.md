@@ -72,6 +72,42 @@ release, not as a follow-up. Run `pnpm db:generate`, commit any new files under
 promote or merge the deployment. The CI `db:check` step intentionally fails if
 the generated schema wants a migration that is not committed.
 
+## NexPress Version Update Checklist
+
+Use this checklist immediately after the framework repo publishes a new npm
+version. The goal is to keep the hosted demo proving the current public install
+path, not yesterday's packages.
+
+1. Create a branch from `main`.
+2. Update every `@nexpress/*` dependency and `@nexpress/cli` to the same
+   published version.
+3. Update the README `create-nexpress@...` reference when `create-nexpress`
+   changed in the same release.
+4. Run `pnpm install` and commit the lockfile.
+5. Run:
+
+   ```bash
+   pnpm typecheck
+   pnpm build
+   pnpm db:check
+   ```
+
+6. If `pnpm db:check` reports drift, run `pnpm db:generate`, review the
+   generated migration, commit it, and apply `pnpm db:migrate` to the managed
+   demo database before production promotion.
+7. Open one PR, wait for GitHub CI and Vercel preview, then merge.
+8. Wait for the production Vercel deployment attached to `main`.
+9. Verify the live demo:
+
+   ```bash
+   curl -I -L https://nexpress-hosted-demo.vercel.app/api/health/ready
+   curl -I -L https://nexpress-hosted-demo.vercel.app
+   ```
+
+10. If the release touched demo reset, auth, themes, or seeded content, run
+    `pnpm demo:reset` against the configured production environment or trigger
+    the protected reset endpoint once, then spot-check `/` and `/admin/demo-login`.
+
 ## Public Content
 
 The public site should show a real NexPress surface, not a blank scaffold:
