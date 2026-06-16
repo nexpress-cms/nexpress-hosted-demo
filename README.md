@@ -1,6 +1,6 @@
 # NexPress Hosted Demo
 
-Public demo app scaffolded with `create-nexpress@0.1.27`.
+Public demo app for the current published NexPress packages.
 
 Live demo: https://nexpress-hosted-demo.vercel.app
 
