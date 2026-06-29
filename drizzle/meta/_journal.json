@@ -15,6 +15,13 @@
       "when": 1779596074148,
       "tag": "0001_noisy_winter_soldier",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1782726587337,
+      "tag": "0002_nebulous_bulldozer",
+      "breakpoints": true
     }
   ]
 }
