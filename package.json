@@ -47,7 +47,8 @@
     "next": "^16.0.0",
     "pg": "^8.13.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sharp": "0.35.3"
   },
   "devDependencies": {
     "@nexpress/cli": "0.3.26",
