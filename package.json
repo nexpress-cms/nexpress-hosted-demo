@@ -7,8 +7,10 @@
   "scripts": {
     "predev": "tsx scripts/dev-notice.ts",
     "dev": "next dev",
+    "prebuild": "pnpm schema:gen",
     "build": "tsx scripts/build.ts",
     "start": "next start",
+    "pretypecheck": "pnpm schema:gen",
     "typecheck": "tsc --noEmit",
     "deploy:plan": "tsx scripts/deploy-plan.ts",
     "doctor": "tsx scripts/doctor.ts",
