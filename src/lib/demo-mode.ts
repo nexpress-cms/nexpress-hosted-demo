@@ -6,13 +6,13 @@ import {
   NP_DEFAULT_SITE_ID,
   NpForbiddenError,
   ensureDefaultSite,
-  getDb,
   grantSiteMembership,
   hashPassword,
   npUsers,
   type NpAuthUser,
   type NpUserRole,
 } from "@nexpress/core";
+import { getDb } from "@nexpress/core/db";
 
 export const DEMO_OPERATOR_EMAIL =
   process.env.NP_DEMO_OPERATOR_EMAIL ?? "operator@nexpress.local";
