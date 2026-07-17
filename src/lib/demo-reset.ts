@@ -1,7 +1,6 @@
 import {
   NP_DEFAULT_SITE_ID,
   NpConflictError,
-  getDb,
   getThemeById,
   npNavigation,
   setActiveThemeId,
@@ -10,6 +9,7 @@ import {
   type NpRegisteredTheme,
   type NpTransaction,
 } from "@nexpress/core";
+import { getDb } from "@nexpress/core/db";
 import { eq, sql } from "drizzle-orm";
 
 import { seedAll } from "@/lib/seed-content";
