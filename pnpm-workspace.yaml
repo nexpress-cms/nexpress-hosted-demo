@@ -5,6 +5,10 @@
 # native-backed features (image transforms / password hashing /
 # bundle build) work. Approving them up front matches what
 # `pnpm approve-builds` would write here anyway.
+packages:
+  - "packages/plugins/*"
+  - "packages/themes/*"
+
 allowBuilds:
   sharp: true
   "@node-rs/argon2": true

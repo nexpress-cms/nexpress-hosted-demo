@@ -3,7 +3,6 @@ import "./_load-env.js";
 import { eq } from "drizzle-orm";
 
 import {
-  createDbConnection,
   getActiveTheme,
   getSiteById,
   npUsers,
@@ -15,6 +14,7 @@ import { seedAll } from "@nexpress/app/lib/seed-content";
 
 import nexpressConfig from "../src/nexpress.config.js";
 import * as generatedSchema from "../src/db/generated/collections.js";
+import { observabilityAdapters } from "../src/lib/observability.js";
 
 const databaseUrl = process.env.DATABASE_URL;
 if (!databaseUrl) {
@@ -22,13 +22,25 @@ if (!databaseUrl) {
   process.exit(1);
 }
 
-const { ensureCoreServices, ensurePluginsLoaded } = createBootstrap({
+const { getDb, ensureFor, shutdown } = createBootstrap({
   config: nexpressConfig,
   generatedSchema: generatedSchema as unknown as Record<string, unknown>,
+  ...observabilityAdapters,
 });
 
+async function shutdownAndExit(code: number): Promise<never> {
+  let exitCode = code;
+  try {
+    await shutdown();
+  } catch (error) {
+    console.error("Bootstrap shutdown failed", error);
+    exitCode = 1;
+  }
+  process.exit(exitCode);
+}
+
 async function findFirstAdmin(): Promise<NpAuthUser | null> {
-  const db = createDbConnection({ connectionString: databaseUrl as string });
+  const db = getDb();
   const rows = await db
     .select({
       id: npUsers.id,
@@ -58,27 +70,30 @@ function parseSiteFlag(argv: string[]): string {
 }
 
 async function main(): Promise<void> {
-  ensureCoreServices();
-  await ensurePluginsLoaded();
+  await ensureFor("plugins");
 
   const siteId = parseSiteFlag(process.argv);
   if (siteId !== "default") {
     const target = await getSiteById(siteId);
     if (!target) {
-      console.error(`Site "${siteId}" not found. Create it via /admin/sites or the API first.`);
-      process.exit(1);
+      console.error(
+        `Site "${siteId}" not found. Create it via /admin/sites or the API first.`,
+      );
+      return shutdownAndExit(1);
     }
   }
 
   const actor = await findFirstAdmin();
   if (!actor) {
     console.error("No admin user found. Run `pnpm seed:admin` first.");
-    process.exit(1);
+    return shutdownAndExit(1);
   }
   const theme = await getActiveTheme();
   if (!theme) {
-    console.error("No active theme — pick one in the admin or setup wizard before seeding content.");
-    process.exit(1);
+    console.error(
+      "No active theme — pick one in the admin or setup wizard before seeding content.",
+    );
+    return shutdownAndExit(1);
   }
 
   const { terms, pages, posts, navigation } = await withCurrentSite(
@@ -89,10 +104,10 @@ async function main(): Promise<void> {
   console.log(
     `Done. Created ${pages.created} pages, ${posts.created} posts, ${terms.tagsCreated} tags, ${terms.categoriesCreated} categories, ${navigation.header + navigation.footer} nav items.`,
   );
-  process.exit(0);
+  return shutdownAndExit(0);
 }
 
-main().catch((error) => {
+void main().catch(async (error) => {
   console.error(error);
-  process.exit(1);
+  await shutdownAndExit(1);
 });
