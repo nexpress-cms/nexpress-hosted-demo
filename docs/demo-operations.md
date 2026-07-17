@@ -28,12 +28,12 @@ and let a visitor safely try the Admin UI.
 
 Recommended hosting:
 
-| Surface | Choice | Notes |
-| --- | --- | --- |
-| Web | Vercel | Pushes to `main` deploy production; PRs create previews. |
-| Database | Managed Postgres | Must allow scheduled reset writes. |
-| Media | S3/R2-compatible storage | Vercel filesystem is ephemeral. Use a `demo/` prefix. |
-| Reset | Vercel Cron | Calls `/api/internal/demo-reset` with a bearer token. |
+| Surface  | Choice                   | Notes                                                    |
+| -------- | ------------------------ | -------------------------------------------------------- |
+| Web      | Vercel                   | Pushes to `main` deploy production; PRs create previews. |
+| Database | Managed Postgres         | Must allow scheduled reset writes.                       |
+| Media    | S3/R2-compatible storage | Vercel filesystem is ephemeral. Use a `demo/` prefix.    |
+| Reset    | Vercel Cron              | Calls `/api/internal/demo-reset` with a bearer token.    |
 
 Required environment:
 
@@ -71,6 +71,10 @@ release, not as a follow-up. Run `pnpm db:generate`, commit any new files under
 `drizzle/`, apply `pnpm db:migrate` to the production database, and only then
 promote or merge the deployment. The CI `db:check` step intentionally fails if
 the generated schema wants a migration that is not committed.
+
+`vercel.json` enforces that ordering in Vercel's secret-bearing build
+environment with `pnpm db:migrate && pnpm build`. Keep the command in place so
+clean production deploys cannot promote application code ahead of its schema.
 
 ## NexPress Version Update Checklist
 

@@ -18,19 +18,24 @@ const DEMO_BLOCKED_MUTATION_PREFIXES = [
 
 function isDemoMutationBlocked(request: NextRequest): boolean {
   if (process.env.NP_DEMO_MODE !== "1") return false;
-  if (!["POST", "PUT", "PATCH", "DELETE"].includes(request.method)) return false;
+  if (!["POST", "PUT", "PATCH", "DELETE"].includes(request.method))
+    return false;
 
   const pathname = request.nextUrl.pathname;
-  return DEMO_BLOCKED_MUTATION_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+  return DEMO_BLOCKED_MUTATION_PREFIXES.some((prefix) =>
+    pathname.startsWith(prefix),
+  );
 }
 
 export function proxy(request: NextRequest): Response | Promise<Response> {
   if (isDemoMutationBlocked(request)) {
     return NextResponse.json(
       {
-        ok: false,
-        code: "DEMO_READ_ONLY",
-        message: "This hosted demo resets automatically, so this admin action is disabled.",
+        error: {
+          code: "FORBIDDEN",
+          message:
+            "This hosted demo resets automatically, so this admin action is disabled.",
+        },
       },
       { status: 403 },
     );
