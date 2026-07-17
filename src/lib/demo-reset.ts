@@ -169,17 +169,29 @@ export async function runDemoReset(options: { themeId?: string } = {}): Promise<
   const result = await withCurrentSite(NP_DEFAULT_SITE_ID, async () => {
     const db = getDb();
     return await withDeferredPostCommit(async () =>
-      db.transaction(async (innerTx) => {
-        const tx = innerTx as unknown as NpTransaction;
-        await acquireResetLock(tx);
-        const wiped = await wipeDemoContent(tx);
-        await setActiveThemeId(theme.manifest.id, visitor.id, { tx });
-        const seeded = await seedAll(visitor, theme, { tx });
-        if (seeded.pages.created === 0 || seeded.posts.created === 0) {
-          throw new Error(
-            `Demo reset for theme "${theme.manifest.id}" did not recreate baseline pages and posts`,
-          );
-        }
+      db.transaction(async (lockTx) => {
+        await acquireResetLock(lockTx as unknown as NpTransaction);
+
+        // The shared seed helpers perform their idempotency reads through the
+        // framework DB singleton. Commit the wipe first so those reads cannot
+        // observe the rows being deleted on another pooled connection. The
+        // outer transaction holds the advisory lock across both phases, while
+        // the seed writes remain atomic in their own transaction.
+        const wiped = await db.transaction(async (wipeTx) =>
+          wipeDemoContent(wipeTx as unknown as NpTransaction),
+        );
+        const seeded = await db.transaction(async (seedTx) => {
+          const tx = seedTx as unknown as NpTransaction;
+          await setActiveThemeId(theme.manifest.id, visitor.id, { tx });
+          const next = await seedAll(visitor, theme, { tx });
+          if (next.pages.created === 0 || next.posts.created === 0) {
+            throw new Error(
+              `Demo reset for theme "${theme.manifest.id}" did not recreate baseline pages and posts`,
+            );
+          }
+          return next;
+        });
+
         return { wiped, seeded };
       }),
     );
