@@ -2,7 +2,6 @@ import {
   NP_DEFAULT_SITE_ID,
   NpConflictError,
   getThemeById,
-  npNavigation,
   setActiveThemeId,
   withCurrentSite,
   withDeferredPostCommit,
@@ -10,7 +9,7 @@ import {
   type NpTransaction,
 } from "@nexpress/core";
 import { getDb } from "@nexpress/core/db";
-import { eq, sql } from "drizzle-orm";
+import { sql } from "drizzle-orm";
 
 import { seedAll } from "@/lib/seed-content";
 
@@ -39,6 +38,19 @@ const DEFAULT_DEMO_THEME_ID = "default";
 interface DemoThemeSeedFixture {
   pages?: readonly unknown[];
   posts?: readonly unknown[];
+}
+
+function getQueryRows(result: unknown, operation: string): unknown[] {
+  if (
+    !result ||
+    typeof result !== "object" ||
+    !("rows" in result) ||
+    !Array.isArray(result.rows)
+  ) {
+    throw new Error(`Unexpected database result while ${operation}`);
+  }
+
+  return result.rows;
 }
 
 function getDemoSeedFixture(theme: NpRegisteredTheme): DemoThemeSeedFixture {
@@ -101,50 +113,72 @@ async function wipeDemoContent(tx: NpTransaction): Promise<DemoResetResult["wipe
       and collection in ('pages', 'posts', 'tags', 'categories')
   `);
 
-  const deletedPages = await tx.execute<{ id: string }>(sql`
-    delete from np_c_pages
-    where site_id = ${NP_DEFAULT_SITE_ID}
-    returning id
-  `);
-  counts.pages = deletedPages.rows.length;
+  counts.pages = getQueryRows(
+    await tx.execute(sql`
+      delete from np_c_pages
+      where site_id = ${NP_DEFAULT_SITE_ID}
+      returning id
+    `),
+    "deleting demo pages",
+  ).length;
 
-  const deletedPosts = await tx.execute<{ id: string }>(sql`
-    delete from np_c_posts
-    where site_id = ${NP_DEFAULT_SITE_ID}
-    returning id
-  `);
-  counts.posts = deletedPosts.rows.length;
+  counts.posts = getQueryRows(
+    await tx.execute(sql`
+      delete from np_c_posts
+      where site_id = ${NP_DEFAULT_SITE_ID}
+      returning id
+    `),
+    "deleting demo posts",
+  ).length;
 
-  const deletedTags = await tx.execute<{ id: string }>(sql`
-    delete from np_c_tags
-    where site_id = ${NP_DEFAULT_SITE_ID}
-    returning id
-  `);
-  counts.tags = deletedTags.rows.length;
+  counts.tags = getQueryRows(
+    await tx.execute(sql`
+      delete from np_c_tags
+      where site_id = ${NP_DEFAULT_SITE_ID}
+      returning id
+    `),
+    "deleting demo tags",
+  ).length;
 
-  const deletedCategories = await tx.execute<{ id: string }>(sql`
-    delete from np_c_categories
-    where site_id = ${NP_DEFAULT_SITE_ID}
-    returning id
-  `);
-  counts.categories = deletedCategories.rows.length;
+  counts.categories = getQueryRows(
+    await tx.execute(sql`
+      delete from np_c_categories
+      where site_id = ${NP_DEFAULT_SITE_ID}
+      returning id
+    `),
+    "deleting demo categories",
+  ).length;
 
-  const deletedNav = await tx
-    .delete(npNavigation)
-    .where(eq(npNavigation.siteId, NP_DEFAULT_SITE_ID))
-    .returning({ id: npNavigation.id });
-  counts.navItems = deletedNav.length;
+  counts.navItems = getQueryRows(
+    await tx.execute(sql`
+      delete from np_navigation
+      where site_id = ${NP_DEFAULT_SITE_ID}
+      returning id
+    `),
+    "deleting demo navigation",
+  ).length;
 
   return counts;
 }
 
 async function acquireResetLock(tx: NpTransaction): Promise<void> {
-  const result = await tx.execute<{ acquired: boolean }>(sql`
-    select pg_try_advisory_xact_lock(hashtext('nexpress-hosted-demo-reset')) as acquired
-  `);
+  const rows = getQueryRows(
+    await tx.execute(sql`
+      select pg_try_advisory_xact_lock(hashtext('nexpress-hosted-demo-reset')) as acquired
+    `),
+    "acquiring the demo reset lock",
+  );
+  const firstRow = rows[0];
+  const acquired =
+    firstRow && typeof firstRow === "object" && "acquired" in firstRow
+      ? firstRow.acquired
+      : undefined;
 
-  if (!result.rows[0]?.acquired) {
+  if (acquired === false) {
     throw new NpConflictError("Demo reset is already running");
+  }
+  if (acquired !== true) {
+    throw new Error("Unexpected database result while acquiring the demo reset lock");
   }
 }
 
