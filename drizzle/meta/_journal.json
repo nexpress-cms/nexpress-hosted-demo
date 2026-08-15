@@ -50,6 +50,13 @@
       "when": 1785249976136,
       "tag": "0006_mixed_doctor_faustus",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1786805275813,
+      "tag": "0007_jittery_power_pack",
+      "breakpoints": true
     }
   ]
 }
