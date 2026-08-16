@@ -88,6 +88,22 @@ export function listNexpressPackageNames(manifest: PackageManifest): string[] {
   return names.sort((left, right) => left.localeCompare(right));
 }
 
+export function nexpressDependenciesMatchVersion(
+  manifest: PackageManifest,
+  packageNames: string[],
+  version: string,
+): boolean {
+  const specifiers = new Map<string, string>();
+  for (const field of dependencyFields) {
+    for (const [name, specifier] of Object.entries(
+      dependencyMap(manifest, field),
+    )) {
+      specifiers.set(name, specifier);
+    }
+  }
+  return packageNames.every((name) => specifiers.get(name) === version);
+}
+
 export function analyzeNexpressRegistryMetadata(
   expectedName: string,
   expectedVersion: string,
@@ -300,6 +316,12 @@ export async function updateNexpress(
     `[update:nexpress] verifying ${packageNames.length} package(s) at exact version ${version}.`,
   );
   await verifyNexpressRegistryPackages(packageNames, version);
+  if (nexpressDependenciesMatchVersion(before, packageNames, version)) {
+    console.log(
+      `[update:nexpress] ${packageNames.length} package(s) are already synchronized to ${version}.`,
+    );
+    return;
+  }
   execFileSync(
     "pnpm",
     ["up", ...packageNames.map((name) => `${name}@${version}`), "--save-exact"],

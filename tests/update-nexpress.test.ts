@@ -8,6 +8,7 @@ import {
   assertNexpressManifestUpdate,
   assertUpdateChangePaths,
   listNexpressPackageNames,
+  nexpressDependenciesMatchVersion,
   parseNexpressVersion,
   parseUpdateArguments,
   verifyNexpressRegistryPackages,
@@ -67,6 +68,29 @@ test("selects every installed @nexpress package in stable order", () => {
         devDependencies: { "@nexpress/core": "0.4.3" },
       }),
     /must not appear in multiple/,
+  );
+});
+
+test("recognizes an already synchronized exact package family", () => {
+  const packageNames = listNexpressPackageNames(before);
+  assert.equal(
+    nexpressDependenciesMatchVersion(before, packageNames, "0.4.3"),
+    true,
+  );
+  assert.equal(
+    nexpressDependenciesMatchVersion(before, packageNames, "0.4.4"),
+    false,
+  );
+  assert.equal(
+    nexpressDependenciesMatchVersion(
+      {
+        dependencies: { ...before.dependencies, "@nexpress/core": "0.4.4" },
+        devDependencies: before.devDependencies,
+      },
+      packageNames,
+      "0.4.4",
+    ),
+    false,
   );
 });
 
