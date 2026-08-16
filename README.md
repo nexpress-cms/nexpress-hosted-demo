@@ -49,6 +49,13 @@ Set Vercel's `CRON_SECRET` to the same value as `NP_DEMO_RESET_TOKEN`.
 GitHub is connected to Vercel. Pushes to `main` deploy the production demo, and
 pull requests create preview deployments.
 
+Published NexPress upgrades are driven by the **Update NexPress** manual GitHub
+Actions workflow. It verifies npm provenance, synchronizes every installed
+`@nexpress/*` package, generates migrations, runs the local gates, and opens a
+draft PR for migration and preview review. A successful Vercel `Production`
+deployment then triggers the live readiness and homepage smoke workflow. See
+[Demo Operations](./docs/demo-operations.md#nexpress-version-update-checklist).
+
 ## Getting started
 
 ```bash
