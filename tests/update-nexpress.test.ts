@@ -9,6 +9,7 @@ import {
   assertUpdateChangePaths,
   listNexpressPackageNames,
   parseNexpressVersion,
+  parseUpdateArguments,
   verifyNexpressRegistryPackages,
 } from "../scripts/update-nexpress.js";
 
@@ -44,6 +45,14 @@ test("accepts one exact semver and rejects tags, ranges, and leading v", () => {
   for (const invalid of [undefined, "latest", "^0.4.4", "v0.4.4", "0.4"]) {
     assert.throws(() => parseNexpressVersion(invalid), /one exact npm version/);
   }
+});
+
+test("accepts pnpm run arguments with or without the separator", () => {
+  assert.equal(parseUpdateArguments(["0.4.4"]), "0.4.4");
+  assert.equal(parseUpdateArguments(["--", "0.4.4"]), "0.4.4");
+  assert.throws(() => parseUpdateArguments([]), /Usage:/);
+  assert.throws(() => parseUpdateArguments(["--"]), /Usage:/);
+  assert.throws(() => parseUpdateArguments(["0.4.4", "0.4.5"]), /Usage:/);
 });
 
 test("selects every installed @nexpress package in stable order", () => {
