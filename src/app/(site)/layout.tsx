@@ -10,14 +10,25 @@ function DemoSiteBar() {
     <div className="border-b border-slate-200 bg-slate-950 px-4 py-2 text-sm text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <span>
-          NexPress hosted demo. Explore the default theme, seeded content, and admin workflow.
+          NexPress hosted demo. Explore the default theme, seeded content, and
+          admin workflow.
         </span>
-        <a
-          className="font-semibold text-white underline underline-offset-4 hover:text-amber-200"
-          href="/admin/demo-login"
-        >
-          Open demo admin
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            className="font-semibold text-white underline underline-offset-4 hover:text-amber-200"
+            href="/admin/demo-login"
+          >
+            Open demo admin
+          </a>
+          <a
+            className="font-semibold text-white underline underline-offset-4 hover:text-amber-200"
+            href="https://github.com/nexpress-cms/nexpress/issues/new?template=install_feedback.yml"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Share feedback
+          </a>
+        </div>
       </div>
     </div>
   );
