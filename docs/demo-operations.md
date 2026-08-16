@@ -78,9 +78,11 @@ clean production deploys cannot promote application code ahead of its schema.
 
 ## NexPress Version Update Checklist
 
-Use the **Update NexPress** GitHub Actions workflow immediately after the
-framework repo publishes a new npm version. Supply the exact version without a
-leading `v` or range. One run:
+The framework Release workflow automatically dispatches **Update NexPress**
+after a fixed-family npm publish and provenance verification. It supplies both
+the exact version and the source release commit SHA, which appear in the run
+title and summary. For recovery, staff may dispatch the same workflow manually
+with the exact version and leave `source_sha` empty. One run:
 
 1. verifies the exact manifest, tarball integrity, provenance, and root npm
    metadata for every installed `@nexpress/*` package;
@@ -90,6 +92,10 @@ leading `v` or range. One run:
 5. opens or refreshes an automation-owned **draft** PR; and
 6. explicitly dispatches CI because PRs created with `GITHUB_TOKEN` do not
    trigger another Actions workflow automatically.
+
+Duplicate dispatches are safe: when all direct NexPress dependencies already
+match the requested exact version, registry verification still runs but pnpm,
+migration generation, branch creation, and PR creation are skipped.
 
 Review every generated SQL migration and the Vercel preview before marking the
 PR ready. The workflow never merges its own PR. The production Vercel build
