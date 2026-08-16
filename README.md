@@ -4,6 +4,8 @@ Public demo app for the current published NexPress packages.
 
 Live demo: https://nexpress-hosted-demo.vercel.app
 
+Feedback: https://github.com/nexpress-cms/nexpress/issues/new?template=install_feedback.yml
+
 The hosted demo uses the default theme and sample content so visitors can try
 the public site, page builder, collections, navigation, plugins, and admin
 workflows without treating the account as a production admin.
