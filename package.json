@@ -13,6 +13,7 @@
     "pretypecheck": "pnpm schema:gen",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
+    "update:nexpress": "tsx scripts/update-nexpress.ts",
     "deploy:plan": "tsx scripts/deploy-plan.ts",
     "doctor": "tsx scripts/doctor.ts",
     "doctor:prod": "tsx scripts/doctor.ts --prod",

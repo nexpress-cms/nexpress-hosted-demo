@@ -1,0 +1,34 @@
+name: Production smoke
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-smoke-${{ github.event.deployment.id }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    if: >-
+      github.event.deployment.environment == 'Production' &&
+      github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      DEMO_URL: https://nexpress-hosted-demo.vercel.app
+
+    steps:
+      - name: Verify production readiness and homepage
+        run: |
+          curl --fail --silent --show-error --location \
+            --retry 12 --retry-all-errors --retry-delay 10 --retry-max-time 180 \
+            --max-time 20 --output /dev/null "$DEMO_URL/api/health/ready"
+          curl --fail --silent --show-error --location \
+            --retry 12 --retry-all-errors --retry-delay 10 --retry-max-time 180 \
+            --max-time 20 --output /dev/null "$DEMO_URL/"
+          echo "Verified Production deployment ${{ github.event.deployment.sha }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "$DEMO_URL/api/health/ready" >> "$GITHUB_STEP_SUMMARY"
+          echo "$DEMO_URL/" >> "$GITHUB_STEP_SUMMARY"

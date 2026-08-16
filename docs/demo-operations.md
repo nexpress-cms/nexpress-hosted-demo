@@ -78,39 +78,41 @@ clean production deploys cannot promote application code ahead of its schema.
 
 ## NexPress Version Update Checklist
 
-Use this checklist immediately after the framework repo publishes a new npm
-version. The goal is to keep the hosted demo proving the current public install
-path, not yesterday's packages.
+Use the **Update NexPress** GitHub Actions workflow immediately after the
+framework repo publishes a new npm version. Supply the exact version without a
+leading `v` or range. One run:
 
-1. Create a branch from `main`.
-2. Update every `@nexpress/*` dependency and `@nexpress/cli` to the same
-   published version.
-3. Update the README `create-nexpress@...` reference when `create-nexpress`
-   changed in the same release.
-4. Run `pnpm install` and commit the lockfile.
-5. Run:
+1. verifies the exact manifest, tarball integrity, provenance, and root npm
+   metadata for every installed `@nexpress/*` package;
+2. updates all of those direct dependencies to one exact version;
+3. refreshes the lockfile and generates any required `drizzle/` migration;
+4. runs typecheck, tests, and the production build;
+5. opens or refreshes an automation-owned **draft** PR; and
+6. explicitly dispatches CI because PRs created with `GITHUB_TOKEN` do not
+   trigger another Actions workflow automatically.
 
-   ```bash
-   pnpm typecheck
-   pnpm build
-   pnpm db:check
-   ```
+Review every generated SQL migration and the Vercel preview before marking the
+PR ready. The workflow never merges its own PR. The production Vercel build
+runs `pnpm db:migrate && pnpm build`, so the migration completes before the new
+application deployment is promoted.
 
-6. If `pnpm db:check` reports drift, run `pnpm db:generate`, review the
-   generated migration, commit it, and apply `pnpm db:migrate` to the managed
-   demo database before production promotion.
-7. Open one PR, wait for GitHub CI and Vercel preview, then merge.
-8. Wait for the production Vercel deployment attached to `main`.
-9. Verify the live demo:
+When Vercel reports that exact `Production` deployment successful, the
+**Production smoke** workflow verifies both `/api/health/ready` and `/`. A
+failed Vercel deployment remains a failed commit deployment and never produces
+a misleading smoke success for an older release.
 
-   ```bash
-   curl -I -L https://nexpress-hosted-demo.vercel.app/api/health/ready
-   curl -I -L https://nexpress-hosted-demo.vercel.app
-   ```
+For a local dry run from a clean checkout, use:
 
-10. If the release touched demo reset, auth, themes, or seeded content, run
-    `pnpm demo:reset` against the configured production environment or trigger
-    the protected reset endpoint once, then spot-check `/` and `/admin/demo-login`.
+```bash
+pnpm run update:nexpress -- 0.4.4
+pnpm run typecheck
+pnpm test
+pnpm run build
+```
+
+If the release touched demo reset, auth, themes, or seeded content, run
+`pnpm demo:reset` against the configured production environment or trigger the
+protected reset endpoint once, then spot-check `/` and `/admin/demo-login`.
 
 ## Public Content
 
