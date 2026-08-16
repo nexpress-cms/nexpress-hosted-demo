@@ -59,6 +59,14 @@ export function parseNexpressVersion(value: string | undefined): string {
   return version;
 }
 
+export function parseUpdateArguments(args: string[]): string {
+  const normalizedArgs = args[0] === "--" ? args.slice(1) : args;
+  if (normalizedArgs.length !== 1) {
+    throw new Error("Usage: pnpm run update:nexpress -- <exact-version>");
+  }
+  return parseNexpressVersion(normalizedArgs[0]);
+}
+
 export function listNexpressPackageNames(manifest: PackageManifest): string[] {
   const names: string[] = [];
   const seen = new Set<string>();
@@ -314,17 +322,14 @@ const entrypoint = process.argv[1]
   ? pathToFileURL(resolve(process.argv[1])).href
   : undefined;
 if (entrypoint === import.meta.url) {
-  const args = process.argv.slice(2);
-  if (args.length !== 1) {
-    console.error("Usage: pnpm run update:nexpress -- <exact-version>");
-    process.exitCode = 1;
-  } else {
-    updateNexpress(
+  const main = async () => {
+    await updateNexpress(
       resolve(import.meta.dirname, ".."),
-      parseNexpressVersion(args[0]),
-    ).catch((error: unknown) => {
-      console.error(error instanceof Error ? error.message : String(error));
-      process.exitCode = 1;
-    });
-  }
+      parseUpdateArguments(process.argv.slice(2)),
+    );
+  };
+  main().catch((error: unknown) => {
+    console.error(error instanceof Error ? error.message : String(error));
+    process.exitCode = 1;
+  });
 }
