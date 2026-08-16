@@ -1,4 +1,5 @@
 name: Update NexPress
+run-name: Update NexPress ${{ inputs.version }} · ${{ inputs.source_sha || 'manual' }}
 
 on:
   workflow_dispatch:
@@ -6,6 +7,10 @@ on:
       version:
         description: Exact published NexPress version (for example 0.4.4)
         required: true
+        type: string
+      source_sha:
+        description: Optional 40-character NexPress release commit SHA
+        required: false
         type: string
 
 permissions:
@@ -25,6 +30,7 @@ jobs:
       DATABASE_URL: postgres://nexpress:nexpress@localhost:5433/nexpress_hosted_demo_ci
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       NP_SECRET: ci-only-secret-ci-only-secret-ci-only-secret
+      NP_UPDATE_SOURCE_SHA: ${{ inputs.source_sha }}
       NP_UPDATE_VERSION: ${{ inputs.version }}
       SITE_URL: http://localhost:3000
 
@@ -48,6 +54,18 @@ jobs:
 
       - name: Install
         run: pnpm install --frozen-lockfile
+
+      - name: Record release source
+        run: |
+          if [ -n "$NP_UPDATE_SOURCE_SHA" ]; then
+            if [[ ! "$NP_UPDATE_SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+              echo "::error::source_sha must be a 40-character lowercase commit SHA."
+              exit 1
+            fi
+            echo "NexPress release source: \`$NP_UPDATE_SOURCE_SHA\`." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "NexPress update source: manual dispatch." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Update packages and generate migrations
         run: pnpm run update:nexpress -- "$NP_UPDATE_VERSION"
@@ -96,6 +114,9 @@ jobs:
             echo "- synchronized every installed \`@nexpress/*\` package to \`$NP_UPDATE_VERSION\`"
             echo "- refreshed the exact pnpm lockfile"
             echo "- generated schema migrations before validation"
+            if [ -n "$NP_UPDATE_SOURCE_SHA" ]; then
+              echo "- traced to \`nexpress-cms/nexpress@$NP_UPDATE_SOURCE_SHA\`"
+            fi
             echo
             echo "## Migration review"
             echo

@@ -193,6 +193,10 @@ test("automation opens a reviewed draft PR and verifies the exact production dep
 
   assert.match(updateWorkflow, /workflow_dispatch:/);
   assert.match(updateWorkflow, /version:\s*\n\s+description:/);
+  assert.match(updateWorkflow, /source_sha:\s*\n\s+description:/);
+  assert.match(updateWorkflow, /run-name: Update NexPress.*source_sha/);
+  assert.match(updateWorkflow, /\^\[0-9a-f\]\{40\}\$/);
+  assert.match(updateWorkflow, /nexpress-cms\/nexpress@\$NP_UPDATE_SOURCE_SHA/);
   assert.match(updateWorkflow, /pull-requests: write/);
   assert.match(updateWorkflow, /actions: write/);
   assert.match(updateWorkflow, /gh pr create[\s\S]*--draft/);
