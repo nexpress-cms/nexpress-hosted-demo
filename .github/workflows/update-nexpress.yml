@@ -133,16 +133,5 @@ jobs:
             echo "- \`pnpm run build\`"
           } > "$body_file"
 
-          pr_number=$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$branch" --state open --json number --jq '.[0].number // empty')
-          if [ -n "$pr_number" ]; then
-            gh pr edit "$pr_number" --repo "$GITHUB_REPOSITORY" \
-              --title "chore: update NexPress to $NP_UPDATE_VERSION" \
-              --body-file "$body_file"
-            pr_url=$(gh pr view "$pr_number" --repo "$GITHUB_REPOSITORY" --json url --jq .url)
-          else
-            pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$branch" --draft \
-              --title "chore: update NexPress to $NP_UPDATE_VERSION" \
-              --body-file "$body_file")
-          fi
-          gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$branch"
-          echo "Draft update PR: $pr_url" >> "$GITHUB_STEP_SUMMARY"
+          head_sha=$(git rev-parse HEAD)
+          pnpm exec tsx scripts/publish-nexpress-update-pr.ts "$branch" "$head_sha" "$body_file"

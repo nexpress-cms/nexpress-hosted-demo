@@ -199,8 +199,8 @@ test("automation opens a reviewed draft PR and verifies the exact production dep
   assert.match(updateWorkflow, /nexpress-cms\/nexpress@\$NP_UPDATE_SOURCE_SHA/);
   assert.match(updateWorkflow, /pull-requests: write/);
   assert.match(updateWorkflow, /actions: write/);
-  assert.match(updateWorkflow, /gh pr create[\s\S]*--draft/);
-  assert.match(updateWorkflow, /gh workflow run ci\.yml[^\n]*--ref/);
+  assert.match(updateWorkflow, /git rev-parse HEAD/);
+  assert.match(updateWorkflow, /publish-nexpress-update-pr\.ts/);
   assert.match(productionWorkflow, /deployment_status:/);
   assert.match(productionWorkflow, /environment == 'Production'/);
   assert.match(productionWorkflow, /deployment_status\.state == 'success'/);
