@@ -57,6 +57,13 @@
       "when": 1786805275813,
       "tag": "0007_jittery_power_pack",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1795761682897,
+      "tag": "0008_perfect_carlie_cooper",
+      "breakpoints": true
     }
   ]
 }
